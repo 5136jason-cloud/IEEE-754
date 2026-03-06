@@ -8,3 +8,5 @@ The structure uses three parts of manipulation on the two float point numbers, t
 <img width="612" height="438" alt="Picture 1" src="https://github.com/user-attachments/assets/3f085d6c-5d25-4d49-9728-6fda296e0194" />
 
 We first freeze the counter in PC then do XOR, addition and multiplication to the three parts respectively and check the carry bit by comparing the two highest bits of the fraction parts of the original numbers. After combining them together we have the final result.
+
+EL.PSY.KONGROO
