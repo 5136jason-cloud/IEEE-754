@@ -1,0 +1,30 @@
+//Initialize:
+MOV R0, #113
+MOV R1, #106
+LSL R0, R0, #6   //7232
+LSL R1, R1, #2   //424
+MOV R4, #0   //low 16 of answer
+MOV R5, #0   //high 16 of answer
+MOV R2, R1   //op2_shifted low 16
+MOV R3, #0   //op2_shifted high 16
+
+
+CMP R0, #0   //while loop
+JEQ 12
+
+MOV R6, #1   //op1_low 16 if condition
+AND R6, R6, R0
+JEQ 3
+ADD R4, R4, R2
+ADC R5, R5, R3
+
+LSL R3, R3, #1   //left_shift of op1
+LSL R2, R2, #1
+JCC 2
+ADD R3, #1
+
+LSR R0, R0, #1
+JMP -12
+
+//Result = 3066368
+//So expected R5 = 0x002E; R4 = 0xCA00

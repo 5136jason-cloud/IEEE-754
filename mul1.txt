@@ -1,0 +1,18 @@
+//Initialize:
+MOV R0, #12
+MOV R1, #5
+MOV R2, R1   //OP2_shifted
+MOV R3, #0
+
+CMP R0, #0   //while loop
+JEQ 8
+
+MOV R4, #1
+AND R4, R4, R0   //if condition
+JEQ 2
+ADD R3, R3, R2
+LSL R2, R2, #1
+LSR R0, R0, #1
+JMP -8
+
+
